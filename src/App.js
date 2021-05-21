@@ -17,7 +17,8 @@ function App() {
 
   useEffect(() => {
     setInterval(function(){
-      const diff = Math.abs(new Date('1 Jan 2021') - new Date());
+      const yr = new Date().getFullYear() + 1;
+      const diff = Math.abs(new Date(`1 Jan ${yr}`) - new Date());
       setDays(Math.round(diff / (1000 * 3600 * 24)));
       setHours(Math.round(diff % (1000 * 3600 * 24) / (1000 * 3600)));
       setMinutes(startPad(Math.round(diff % (1000 * 3600) / (1000 * 60))));
